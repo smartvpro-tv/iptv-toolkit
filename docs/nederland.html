@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="nl-NL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IPTV kopen? Test eerst je playlist en verbinding | iptv-toolkit</title>
+<meta name="description" content="Gratis controles voordat je IPTV koopt: test de playlist, meet de echte snelheid naar de stream tijdens de Eredivisie en weet wat je verbinding aankan.">
+<link rel="canonical" href="https://smartvpro-tv.github.io/iptv-toolkit/nederland.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IPTV kopen? Test eerst je playlist en verbinding | iptv-toolkit">
+<meta property="og:description" content="Gratis controles voordat je IPTV koopt: test de playlist, meet de echte snelheid naar de stream tijdens de Eredivisie en weet wat je verbinding aankan.">
+<meta property="og:url" content="https://smartvpro-tv.github.io/iptv-toolkit/nederland.html">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "iptv-toolkit", "item": "https://smartvpro-tv.github.io/iptv-toolkit/"}, {"@type": "ListItem", "position": 2, "name": "Nederland", "item": "https://smartvpro-tv.github.io/iptv-toolkit/nederland.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "IPTV kopen? Test eerst je playlist en verbinding | iptv-toolkit", "description": "Gratis controles voordat je IPTV koopt: test de playlist, meet de echte snelheid naar de stream tijdens de Eredivisie en weet wat je verbinding aankan.", "inLanguage": "nl-NL", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "url": "https://smartvpro-tv.github.io/iptv-toolkit/nederland.html", "author": {"@type": "Organization", "name": "SmartVPro", "url": "https://smartvpro.com/"}, "publisher": {"@type": "Organization", "name": "SmartVPro", "url": "https://smartvpro.com/"}, "about": {"@type": "SoftwareApplication", "name": "iptv-toolkit", "url": "https://smartvpro-tv.github.io/iptv-toolkit/"}}</script>
+</head>
+<body>
+<header class="site"><div class="inner">
+<a class="brand" href="index.html">iptv<span>-</span>toolkit</a>
+<nav class="top"><a href="index.html">Home</a><a href="guides/getting-started.html">Get started</a><a href="guides/buffering.html">Buffering</a><a href="guides/m3u-format.html">M3U format</a><a href="https://github.com/smartvpro-tv/iptv-toolkit">GitHub</a></nav>
+</div></header>
+<main>
+<div class="crumbs"><a href="index.html">iptv-toolkit</a> / Nederland</div>
+<h1>IPTV testen in Nederland</h1>
+<p class="lede">Controleer de playlist, meet de echte snelheid naar de stream en weet wat glasvezel, kabel en DSL aankunnen.</p>
+
+<p>Wil je <a href="https://dutchiptvnl.net/iptv-kopen/">IPTV kopen</a>, of hapert het abonnement dat je al hebt? Met deze gratis controles zie je zelf of het aan de dienst, je internetverbinding of je wifi ligt.</p>
+<h2>Voordat je een abonnement neemt</h2>
+<ol class="steps">
+<li><strong>Vraag een proefperiode</strong>, bijvoorbeeld een <a href="https://dutchiptvnl.net/iptv-proefabonnement/">IPTV proefabonnement</a>.</li>
+<li><strong>Controleer de playlist:</strong>
+<pre><code><span class="prompt">$ </span>iptv-toolkit info proef.m3u
+<span class="prompt">$ </span>iptv-toolkit check proef.m3u -n 50</code></pre>
+Kijk hoeveel zenders antwoorden en hoeveel een <code>tvg-id</code> hebben (nodig voor de tv-gids).</li>
+<li><strong>Test tijdens de wedstrijd.</strong> Draai <code>iptv-toolkit speed</code> op een sportzender tijdens de Eredivisie, de Champions League of een Formule 1-race.</li>
+<li><strong>Vergelijk de abonnementen</strong>: prijs per maand en per jaar, aantal schermen, en de <a href="https://dutchiptvnl.net/terugbetalingsbeleid/">terugbetalingsregeling</a>. Zie ook <a href="https://dutchiptvnl.net/iptv-abonnement/">IPTV abonnement</a>.</li>
+</ol>
+<h2>Snelheid per type verbinding</h2>
+<table>
+<tr><th>Verbinding</th><th>Waar je op let</th></tr>
+<tr><td>Glasvezel</td><td>Ruim voldoende snelheid. Hapert het toch, test dan eerst de wifi.</td></tr>
+<tr><td>Kabel</td><td>Snel, maar test ook 's avonds: het netwerk in de wijk wordt dan drukker.</td></tr>
+<tr><td>DSL</td><td>Meet om 21:00. Onder 15 Mbps naar de stream: kies HD in plaats van 4K.</td></tr>
+<tr><td>4G/5G thuis</td><td>Wisselende snelheid en vertraging. Test meerdere keren op verschillende tijden.</td></tr>
+</table>
+<p>Hapert het al? Volg de <a href="guides/buffering.html">buffering-methode</a> (Engels) en daarna <a href="https://dutchiptvnl.net/iptv-buffering/">IPTV buffering oplossen</a>.</p>
+<h2>Na het kopen</h2>
+<pre><code><span class="prompt">$ </span>iptv-toolkit check mijn.m3u --save-working werkt.m3u
+<span class="prompt">$ </span>iptv-toolkit filter werkt.m3u -g "NL" -o nederlands.m3u</code></pre>
+<p>Een kleinere playlist laadt sneller in TiviMate, IPTV Smarters of op een smart-tv. Uitleg over installeren vind je op <a href="https://dutchiptvnl.net/iptv-installeren/">IPTV installeren</a>, en een overzicht van spelers op <a href="https://dutchiptvnl.net/iptv-player/">IPTV player</a>.</p>
+<h2>Meer lezen</h2>
+<ul>
+<li><a href="https://dutchiptvnl.net/">Dutch IPTV</a> — alles over IPTV in Nederland</li>
+<li><a href="https://dutchiptvnl.net/iptv-apparaten/">Welke apparaten werken met IPTV?</a></li>
+<li><a href="https://dutchiptvnl.net/beste-iptv-nederland/">De beste IPTV in Nederland kiezen</a></li>
+</ul>
+
+<h2>Veelgestelde vragen</h2>
+<h3>Hoeveel internetsnelheid heb ik nodig voor IPTV?</h3><p>Reken op ongeveer 15 Mbps per scherm voor Full HD en 40 Mbps per scherm voor 4K, gemeten naar de stream zelf. Met glasvezel of kabel is dat in Nederland bijna altijd haalbaar; wifi is meestal de zwakke plek.</p>
+<h3>Waarom hapert IPTV tijdens de Eredivisie of Formule 1?</h3><p>Tijdens grote wedstrijden en races is het druk op de servers en het netwerk. Test daarom met iptv-toolkit speed tijdens een wedstrijd, niet op een rustige ochtend.</p>
+<h3>Kan ik IPTV eerst testen voordat ik koop?</h3><p>Ja. Vraag een proefabonnement en controleer de playlist en de snelheid op de momenten dat je normaal kijkt.</p>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Hoeveel internetsnelheid heb ik nodig voor IPTV?", "acceptedAnswer": {"@type": "Answer", "text": "Reken op ongeveer 15 Mbps per scherm voor Full HD en 40 Mbps per scherm voor 4K, gemeten naar de stream zelf. Met glasvezel of kabel is dat in Nederland bijna altijd haalbaar; wifi is meestal de zwakke plek."}}, {"@type": "Question", "name": "Waarom hapert IPTV tijdens de Eredivisie of Formule 1?", "acceptedAnswer": {"@type": "Answer", "text": "Tijdens grote wedstrijden en races is het druk op de servers en het netwerk. Test daarom met iptv-toolkit speed tijdens een wedstrijd, niet op een rustige ochtend."}}, {"@type": "Question", "name": "Kan ik IPTV eerst testen voordat ik koop?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Vraag een proefabonnement en controleer de playlist en de snelheid op de momenten dat je normaal kijkt."}}]}</script>
+</main>
+<footer class="site"><div class="inner">
+<div class="cols">
+<div><h4>Tool</h4><ul>
+<li><a href="https://github.com/smartvpro-tv/iptv-toolkit">Source code</a></li>
+<li><a href="guides/getting-started.html">Getting started</a></li>
+<li><a href="https://github.com/smartvpro-tv/iptv-toolkit/issues">Report a bug</a></li>
+</ul></div>
+<div><h4>Guides</h4><ul>
+<li><a href="guides/buffering.html">Fix buffering</a></li>
+<li><a href="guides/m3u-format.html">M3U format</a></li>
+</ul></div>
+<div><h4>By country</h4><ul>
+<li><a href="usa.html">USA</a></li>
+<li><a href="uk.html">United Kingdom</a></li>
+<li><a href="canada.html">Canada</a></li>
+<li><a href="nederland.html">Nederland</a></li>
+</ul></div>
+<div><h4>SmartVPro</h4><ul>
+<li><a href="https://smartvpro.com/">IPTV USA</a></li>
+<li><a href="https://smartvpro.co.uk/iptv-uk/">IPTV UK</a></li>
+<li><a href="https://iptvv-ca.ca/">IPTVV Canada</a></li>
+<li><a href="https://dutchiptvnl.net/">Dutch IPTV</a></li>
+</ul></div>
+</div>
+<p>iptv-toolkit is free, open-source software (MIT). It does not include, find or share channels or playlists.</p>
+</div></footer>
+</body>
+</html>

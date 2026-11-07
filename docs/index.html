@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iptv-toolkit — check, clean and merge M3U playlists, test IPTV speed</title>
+<meta name="description" content="Free open-source CLI to inspect, check, clean and merge M3U/M3U8 IPTV playlists and measure the real stream speed. Zero dependencies, Python 3.8+.">
+<link rel="canonical" href="https://smartvpro-tv.github.io/iptv-toolkit/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="iptv-toolkit — check, clean and merge M3U playlists, test IPTV speed">
+<meta property="og:description" content="Free open-source CLI to inspect, check, clean and merge M3U/M3U8 IPTV playlists and measure the real stream speed. Zero dependencies, Python 3.8+.">
+<meta property="og:url" content="https://smartvpro-tv.github.io/iptv-toolkit/">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "iptv-toolkit", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Windows, macOS, Linux, Android (Termux)", "softwareVersion": "1.0.0", "license": "https://opensource.org/licenses/MIT", "url": "https://smartvpro-tv.github.io/iptv-toolkit/", "downloadUrl": "https://github.com/smartvpro-tv/iptv-toolkit", "codeRepository": "https://github.com/smartvpro-tv/iptv-toolkit", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Organization", "name": "SmartVPro", "url": "https://smartvpro.com/"}}</script>
+</head>
+<body>
+<header class="site"><div class="inner">
+<a class="brand" href="index.html">iptv<span>-</span>toolkit</a>
+<nav class="top"><a href="index.html" aria-current="page">Home</a><a href="guides/getting-started.html">Get started</a><a href="guides/buffering.html">Buffering</a><a href="guides/m3u-format.html">M3U format</a><a href="https://github.com/smartvpro-tv/iptv-toolkit">GitHub</a></nav>
+</div></header>
+<main>
+
+
+<h1>iptv-toolkit</h1>
+<p class="lede">A free command-line tool to inspect, check, clean and merge M3U&nbsp;/&nbsp;M3U8 playlists, and to measure the real speed you get from a stream. Zero dependencies, runs anywhere Python&nbsp;3.8+ runs.</p>
+<p><a class="btn" href="guides/getting-started.html">Get started</a><a class="btn ghost" href="https://github.com/smartvpro-tv/iptv-toolkit">View on GitHub</a></p>
+<pre><code><span class="prompt">$ </span>pip install git+https://github.com/smartvpro-tv/iptv-toolkit.git
+<span class="prompt">$ </span>iptv-toolkit --version
+iptv-toolkit 1.0.0</code></pre>
+<h2>What it does</h2>
+<table>
+<tr><th>Command</th><th>What you get</th></tr>
+<tr><td><code>info</code></td><td>Number of channels and groups, duplicate URLs, entries with no EPG id or logo, EPG source.</td></tr>
+<tr><td><code>check</code></td><td>Tests every stream in parallel. Marks each one OK, DEAD, TIMEOUT or ERROR and can save a playlist with only the working ones.</td></tr>
+<tr><td><code>clean</code></td><td>Removes duplicate URLs and sorts by name or group.</td></tr>
+<tr><td><code>merge</code></td><td>Combines several playlists into one, without duplicates.</td></tr>
+<tr><td><code>filter</code></td><td>Keeps or drops channels by group or by a name pattern.</td></tr>
+<tr><td><code>speed</code></td><td>Downloads from one stream for a few seconds and tells you if your line can play SD, HD, Full HD or 4K.</td></tr>
+</table>
+<h2>Why test speed to the stream?</h2>
+<p>A normal speed test measures your line to a test server close to you. That number can look great while a channel still buffers, because the path to the stream server is different, busier, or throttled. <code>iptv-toolkit speed</code> downloads real video segments from the stream itself, so the result matches what your player sees.</p>
+<pre><code><span class="prompt">$ </span>iptv-toolkit speed "http://your-provider.example/live/channel/index.m3u8"
+Throughput  : 17.1 Mbps
+Result: this connection can play Full HD (1080p) smoothly.</code></pre>
+<h2>Guides</h2>
+<div class="cards">
+<a class="card" href="guides/getting-started.html"><strong>Getting started</strong><span>Install on Windows, macOS, Linux or Android and run your first check.</span></a>
+<a class="card" href="guides/buffering.html"><strong>Fix buffering</strong><span>Find out if the problem is your Wi-Fi, your internet line or the stream.</span></a>
+<a class="card" href="guides/m3u-format.html"><strong>The M3U format</strong><span>What every line of a playlist means: EXTINF, tvg-id, group-title, EPG.</span></a>
+</div>
+<h2>Guides by country</h2>
+<div class="cards">
+<a class="card" href="usa.html"><strong>🇺🇸 USA</strong><span>Test your playlist and line before and after you subscribe.</span></a>
+<a class="card" href="uk.html"><strong>🇬🇧 United Kingdom</strong><span>Speed targets for HD and 4K, and Premier League evenings.</span></a>
+<a class="card" href="canada.html"><strong>🇨🇦 Canada</strong><span>Checks for Canadian lines, from Toronto to Vancouver.</span></a>
+<a class="card" href="nederland.html"><strong>🇳🇱 Nederland</strong><span>Je IPTV-playlist en verbinding testen, in het Nederlands.</span></a>
+</div>
+<div class="callout">iptv-toolkit does not include, find or share any channels or playlists. Use it with playlists you are allowed to use, such as the one from your own provider.</div>
+
+</main>
+<footer class="site"><div class="inner">
+<div class="cols">
+<div><h4>Tool</h4><ul>
+<li><a href="https://github.com/smartvpro-tv/iptv-toolkit">Source code</a></li>
+<li><a href="guides/getting-started.html">Getting started</a></li>
+<li><a href="https://github.com/smartvpro-tv/iptv-toolkit/issues">Report a bug</a></li>
+</ul></div>
+<div><h4>Guides</h4><ul>
+<li><a href="guides/buffering.html">Fix buffering</a></li>
+<li><a href="guides/m3u-format.html">M3U format</a></li>
+</ul></div>
+<div><h4>By country</h4><ul>
+<li><a href="usa.html">USA</a></li>
+<li><a href="uk.html">United Kingdom</a></li>
+<li><a href="canada.html">Canada</a></li>
+<li><a href="nederland.html">Nederland</a></li>
+</ul></div>
+<div><h4>SmartVPro</h4><ul>
+<li><a href="https://smartvpro.com/">IPTV USA</a></li>
+<li><a href="https://smartvpro.co.uk/iptv-uk/">IPTV UK</a></li>
+<li><a href="https://iptvv-ca.ca/">IPTVV Canada</a></li>
+<li><a href="https://dutchiptvnl.net/">Dutch IPTV</a></li>
+</ul></div>
+</div>
+<p>iptv-toolkit is free, open-source software (MIT). It does not include, find or share channels or playlists.</p>
+</div></footer>
+</body>
+</html>

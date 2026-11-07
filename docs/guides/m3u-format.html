@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The M3U playlist format explained: EXTINF, tvg-id, group-title, EPG</title>
+<meta name="description" content="What every line of an M3U/M3U8 IPTV playlist means: #EXTM3U, #EXTINF, tvg-id, tvg-logo, group-title, x-tvg-url and #EXTVLCOPT, with examples.">
+<link rel="canonical" href="https://smartvpro-tv.github.io/iptv-toolkit/guides/m3u-format.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The M3U playlist format explained: EXTINF, tvg-id, group-title, EPG">
+<meta property="og:description" content="What every line of an M3U/M3U8 IPTV playlist means: #EXTM3U, #EXTINF, tvg-id, tvg-logo, group-title, x-tvg-url and #EXTVLCOPT, with examples.">
+<meta property="og:url" content="https://smartvpro-tv.github.io/iptv-toolkit/guides/m3u-format.html">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "iptv-toolkit", "item": "https://smartvpro-tv.github.io/iptv-toolkit/"}, {"@type": "ListItem", "position": 2, "name": "M3U format", "item": "https://smartvpro-tv.github.io/iptv-toolkit/guides/m3u-format.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "The M3U playlist format explained: EXTINF, tvg-id, group-title, EPG", "description": "What every line of an M3U/M3U8 IPTV playlist means: #EXTM3U, #EXTINF, tvg-id, tvg-logo, group-title, x-tvg-url and #EXTVLCOPT, with examples.", "inLanguage": "en", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "url": "https://smartvpro-tv.github.io/iptv-toolkit/guides/m3u-format.html", "author": {"@type": "Organization", "name": "SmartVPro", "url": "https://smartvpro.com/"}, "publisher": {"@type": "Organization", "name": "SmartVPro", "url": "https://smartvpro.com/"}, "about": {"@type": "SoftwareApplication", "name": "iptv-toolkit", "url": "https://smartvpro-tv.github.io/iptv-toolkit/"}}</script>
+</head>
+<body>
+<header class="site"><div class="inner">
+<a class="brand" href="../index.html">iptv<span>-</span>toolkit</a>
+<nav class="top"><a href="../index.html">Home</a><a href="../guides/getting-started.html">Get started</a><a href="../guides/buffering.html">Buffering</a><a href="../guides/m3u-format.html" aria-current="page">M3U format</a><a href="https://github.com/smartvpro-tv/iptv-toolkit">GitHub</a></nav>
+</div></header>
+<main>
+<div class="crumbs"><a href="../index.html">iptv-toolkit</a> / M3U format</div>
+
+<h1>The M3U format explained</h1>
+<p class="lede">An IPTV playlist is a plain text file. Once you can read it, most "channel missing" or "no guide" problems become easy to fix.</p>
+<pre><code>#EXTM3U x-tvg-url="https://example.com/epg.xml"
+#EXTINF:-1 tvg-id="news.one" tvg-logo="https://example.com/news1.png" group-title="News",News One
+https://example.com/live/news1/index.m3u8
+#EXTINF:-1 tvg-id="sports.one" group-title="Sports",Sports One HD
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://example.com/live/sports1/index.m3u8</code></pre>
+<h2>Line by line</h2>
+<table>
+<tr><th>Part</th><th>Meaning</th></tr>
+<tr><td><code>#EXTM3U</code></td><td>First line of an extended playlist. Can carry <code>x-tvg-url</code> or <code>url-tvg</code>: the address of the TV guide (EPG) in XMLTV format.</td></tr>
+<tr><td><code>#EXTINF:-1</code></td><td>Starts one channel. <code>-1</code> means "live, no fixed length".</td></tr>
+<tr><td><code>tvg-id</code></td><td>The id used to match the channel with the guide. Empty or wrong id = no programme info.</td></tr>
+<tr><td><code>tvg-logo</code></td><td>Logo image shown by the player.</td></tr>
+<tr><td><code>group-title</code></td><td>Category the player shows (News, Sports…).</td></tr>
+<tr><td>text after the comma</td><td>Channel name shown on screen. It can contain commas.</td></tr>
+<tr><td><code>#EXTVLCOPT</code></td><td>Player options for the next stream, often a user agent or referrer.</td></tr>
+<tr><td>the URL line</td><td>The stream itself: <code>.m3u8</code> (HLS) or <code>.ts</code> (MPEG-TS) most of the time.</td></tr>
+</table>
+<h2>Common problems and how to spot them</h2>
+<ul class="check">
+<li><strong>No guide for some channels</strong>: run <code>iptv-toolkit info</code> and look at "No tvg-id".</li>
+<li><strong>Same channel listed twice</strong>: "Duplicate URLs" in <code>info</code>; remove them with <code>clean</code>.</li>
+<li><strong>Channel opens a login page</strong>: <code>check</code> reports <code>DEAD</code> with "HLS URL did not return a playlist".</li>
+<li><strong>Huge list, slow player</strong>: keep only the groups you watch with <code>filter -g</code>.</li>
+</ul>
+<h2>M3U or M3U8?</h2>
+<p>Same format. <code>.m3u8</code> just means the file is UTF-8 encoded. The HLS stream URLs inside a playlist are also <code>.m3u8</code> files, but those are a different kind of playlist that lists video segments.</p>
+
+</main>
+<footer class="site"><div class="inner">
+<div class="cols">
+<div><h4>Tool</h4><ul>
+<li><a href="https://github.com/smartvpro-tv/iptv-toolkit">Source code</a></li>
+<li><a href="../guides/getting-started.html">Getting started</a></li>
+<li><a href="https://github.com/smartvpro-tv/iptv-toolkit/issues">Report a bug</a></li>
+</ul></div>
+<div><h4>Guides</h4><ul>
+<li><a href="../guides/buffering.html">Fix buffering</a></li>
+<li><a href="../guides/m3u-format.html">M3U format</a></li>
+</ul></div>
+<div><h4>By country</h4><ul>
+<li><a href="../usa.html">USA</a></li>
+<li><a href="../uk.html">United Kingdom</a></li>
+<li><a href="../canada.html">Canada</a></li>
+<li><a href="../nederland.html">Nederland</a></li>
+</ul></div>
+<div><h4>SmartVPro</h4><ul>
+<li><a href="https://smartvpro.com/">IPTV USA</a></li>
+<li><a href="https://smartvpro.co.uk/iptv-uk/">IPTV UK</a></li>
+<li><a href="https://iptvv-ca.ca/">IPTVV Canada</a></li>
+<li><a href="https://dutchiptvnl.net/">Dutch IPTV</a></li>
+</ul></div>
+</div>
+<p>iptv-toolkit is free, open-source software (MIT). It does not include, find or share channels or playlists.</p>
+</div></footer>
+</body>
+</html>

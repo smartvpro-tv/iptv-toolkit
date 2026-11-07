@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IPTV UK: check your playlist and broadband before you subscribe | iptv-toolkit</title>
+<meta name="description" content="Free checks for IPTV in the UK: test the playlist, measure real speed to the stream at match time, and what ADSL, FTTC and full fibre can handle.">
+<link rel="canonical" href="https://smartvpro-tv.github.io/iptv-toolkit/uk.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IPTV UK: check your playlist and broadband before you subscribe | iptv-toolkit">
+<meta property="og:description" content="Free checks for IPTV in the UK: test the playlist, measure real speed to the stream at match time, and what ADSL, FTTC and full fibre can handle.">
+<meta property="og:url" content="https://smartvpro-tv.github.io/iptv-toolkit/uk.html">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "iptv-toolkit", "item": "https://smartvpro-tv.github.io/iptv-toolkit/"}, {"@type": "ListItem", "position": 2, "name": "United Kingdom", "item": "https://smartvpro-tv.github.io/iptv-toolkit/uk.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "IPTV UK: check your playlist and broadband before you subscribe | iptv-toolkit", "description": "Free checks for IPTV in the UK: test the playlist, measure real speed to the stream at match time, and what ADSL, FTTC and full fibre can handle.", "inLanguage": "en-GB", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "url": "https://smartvpro-tv.github.io/iptv-toolkit/uk.html", "author": {"@type": "Organization", "name": "SmartVPro", "url": "https://smartvpro.com/"}, "publisher": {"@type": "Organization", "name": "SmartVPro", "url": "https://smartvpro.com/"}, "about": {"@type": "SoftwareApplication", "name": "iptv-toolkit", "url": "https://smartvpro-tv.github.io/iptv-toolkit/"}}</script>
+</head>
+<body>
+<header class="site"><div class="inner">
+<a class="brand" href="index.html">iptv<span>-</span>toolkit</a>
+<nav class="top"><a href="index.html">Home</a><a href="guides/getting-started.html">Get started</a><a href="guides/buffering.html">Buffering</a><a href="guides/m3u-format.html">M3U format</a><a href="https://github.com/smartvpro-tv/iptv-toolkit">GitHub</a></nav>
+</div></header>
+<main>
+<div class="crumbs"><a href="index.html">iptv-toolkit</a> / United Kingdom</div>
+<h1>Testing IPTV in the UK</h1>
+<p class="lede">Real numbers for British broadband: check the playlist, test at kick-off, and know what your line can handle.</p>
+
+<p>Whether you are comparing <a href="https://smartvpro.co.uk/iptv-uk/">IPTV UK</a> providers or trying to stop buffering on the service you have, these checks take ten minutes and give you real numbers instead of guesses.</p>
+<h2>Before you subscribe</h2>
+<ol class="steps">
+<li><strong>Ask for a trial</strong>, for example this <a href="https://smartvpro.co.uk/iptv-trial-uk/">IPTV trial in the UK</a>.</li>
+<li><strong>Check the playlist:</strong>
+<pre><code><span class="prompt">$ </span>iptv-toolkit check trial.m3u -n 50 -f csv -o trial-report.csv</code></pre>
+Open the CSV in Excel or Google Sheets to see which groups fail.</li>
+<li><strong>Test at match time.</strong> Run <code>iptv-toolkit speed</code> on a sports channel during a Saturday 3pm or Sunday 4:30pm kick-off.</li>
+<li><strong>Compare plans and the true cost</strong>: monthly vs yearly, number of connections (see <a href="https://smartvpro.co.uk/iptv-plans/">IPTV plans</a> and <a href="https://smartvpro.co.uk/iptv-cost-uk/">how much IPTV costs in the UK</a>).</li>
+<li><strong>Check the legal side.</strong> Read <a href="https://smartvpro.co.uk/is-iptv-legal-uk/">is IPTV legal in the UK</a> and the provider's <a href="https://smartvpro.co.uk/refund-policy/">refund policy</a>.</li>
+</ol>
+<h2>Broadband types and what to expect</h2>
+<table>
+<tr><th>Connection</th><th>Typical result to the stream</th><th>Good for</th></tr>
+<tr><td>ADSL</td><td>under 10 Mbps</td><td>one SD/HD screen at best</td></tr>
+<tr><td>Superfast fibre (FTTC)</td><td>30–70 Mbps</td><td>2–3 HD screens or one 4K</td></tr>
+<tr><td>Full fibre (FTTP)</td><td>100 Mbps and more</td><td>several 4K screens</td></tr>
+</table>
+<p>These are typical ranges, not promises: always measure your own line. For more detail see <a href="https://smartvpro.co.uk/internet-speed-for-iptv/">internet speed for IPTV</a>, and if you already buffer, follow the <a href="guides/buffering.html">buffering method</a> and the <a href="https://smartvpro.co.uk/iptv-buffering-uk/">UK buffering guide</a>.</p>
+<h2>Set-up tips</h2>
+<ul class="check">
+<li>Many UK homes use the ISP's router in the hallway, far from the TV. A cable or powerline adapter to the TV box often fixes buffering on its own.</li>
+<li>Keep a smaller playlist with only the groups you watch: <code>iptv-toolkit filter all.m3u -g "UK Sports" -o sports.m3u</code>.</li>
+<li>Player set-up: <a href="https://smartvpro.co.uk/iptv-smarters-pro-uk/">IPTV Smarters Pro in the UK</a>.</li>
+</ul>
+
+<h2>Questions from UK viewers</h2>
+<h3>What broadband speed do I need for IPTV in the UK?</h3><p>About 15 Mbps per screen for Full HD and 40 Mbps per screen for 4K, measured to the stream. Superfast fibre (FTTC) handles one or two HD screens; full fibre is better for 4K or a busy household.</p>
+<h3>Why does IPTV buffer during Premier League matches?</h3><p>Saturday 3pm and evening kick-offs are peak load for servers and broadband networks. Test with iptv-toolkit speed during a match, not on a quiet morning.</p>
+<h3>Is IPTV legal in the UK?</h3><p>IPTV as a technology is legal. What matters is whether the provider has the rights to the channels it sells. Check the company, terms and refund policy before you pay.</p>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What broadband speed do I need for IPTV in the UK?", "acceptedAnswer": {"@type": "Answer", "text": "About 15 Mbps per screen for Full HD and 40 Mbps per screen for 4K, measured to the stream. Superfast fibre (FTTC) handles one or two HD screens; full fibre is better for 4K or a busy household."}}, {"@type": "Question", "name": "Why does IPTV buffer during Premier League matches?", "acceptedAnswer": {"@type": "Answer", "text": "Saturday 3pm and evening kick-offs are peak load for servers and broadband networks. Test with iptv-toolkit speed during a match, not on a quiet morning."}}, {"@type": "Question", "name": "Is IPTV legal in the UK?", "acceptedAnswer": {"@type": "Answer", "text": "IPTV as a technology is legal. What matters is whether the provider has the rights to the channels it sells. Check the company, terms and refund policy before you pay."}}]}</script>
+</main>
+<footer class="site"><div class="inner">
+<div class="cols">
+<div><h4>Tool</h4><ul>
+<li><a href="https://github.com/smartvpro-tv/iptv-toolkit">Source code</a></li>
+<li><a href="guides/getting-started.html">Getting started</a></li>
+<li><a href="https://github.com/smartvpro-tv/iptv-toolkit/issues">Report a bug</a></li>
+</ul></div>
+<div><h4>Guides</h4><ul>
+<li><a href="guides/buffering.html">Fix buffering</a></li>
+<li><a href="guides/m3u-format.html">M3U format</a></li>
+</ul></div>
+<div><h4>By country</h4><ul>
+<li><a href="usa.html">USA</a></li>
+<li><a href="uk.html">United Kingdom</a></li>
+<li><a href="canada.html">Canada</a></li>
+<li><a href="nederland.html">Nederland</a></li>
+</ul></div>
+<div><h4>SmartVPro</h4><ul>
+<li><a href="https://smartvpro.com/">IPTV USA</a></li>
+<li><a href="https://smartvpro.co.uk/iptv-uk/">IPTV UK</a></li>
+<li><a href="https://iptvv-ca.ca/">IPTVV Canada</a></li>
+<li><a href="https://dutchiptvnl.net/">Dutch IPTV</a></li>
+</ul></div>
+</div>
+<p>iptv-toolkit is free, open-source software (MIT). It does not include, find or share channels or playlists.</p>
+</div></footer>
+</body>
+</html>

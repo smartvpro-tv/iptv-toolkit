@@ -1,0 +1,12 @@
+#EXTM3U x-tvg-url="https://example.com/epg.xml"
+#EXTINF:-1 tvg-id="news.one" tvg-name="News One" tvg-logo="https://example.com/logos/news1.png" group-title="News",News One
+https://example.com/live/news1/index.m3u8
+#EXTINF:-1 tvg-id="sports.one" tvg-logo="https://example.com/logos/sports1.png" group-title="Sports",Sports One HD
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://example.com/live/sports1/index.m3u8
+#EXTINF:-1 tvg-id="" group-title="Sports",Sports One HD (backup)
+https://example.com/live/sports1/index.m3u8
+#EXTINF:-1 tvg-id="kids.one" group-title="Kids",Kids, Cartoons & More
+https://example.com/live/kids1/index.m3u8
+#EXTINF:-1,Unsorted Channel
+https://example.com/live/misc/stream.ts

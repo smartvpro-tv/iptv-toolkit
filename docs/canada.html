@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IPTV Canada: test your playlist and line before you subscribe | iptv-toolkit</title>
+<meta name="description" content="Free checks for IPTV in Canada: test the playlist, measure the real speed to the stream during hockey night, and what fibre, cable and rural lines can handle.">
+<link rel="canonical" href="https://smartvpro-tv.github.io/iptv-toolkit/canada.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IPTV Canada: test your playlist and line before you subscribe | iptv-toolkit">
+<meta property="og:description" content="Free checks for IPTV in Canada: test the playlist, measure the real speed to the stream during hockey night, and what fibre, cable and rural lines can handle.">
+<meta property="og:url" content="https://smartvpro-tv.github.io/iptv-toolkit/canada.html">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "iptv-toolkit", "item": "https://smartvpro-tv.github.io/iptv-toolkit/"}, {"@type": "ListItem", "position": 2, "name": "Canada", "item": "https://smartvpro-tv.github.io/iptv-toolkit/canada.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "IPTV Canada: test your playlist and line before you subscribe | iptv-toolkit", "description": "Free checks for IPTV in Canada: test the playlist, measure the real speed to the stream during hockey night, and what fibre, cable and rural lines can handle.", "inLanguage": "en-CA", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "url": "https://smartvpro-tv.github.io/iptv-toolkit/canada.html", "author": {"@type": "Organization", "name": "SmartVPro", "url": "https://smartvpro.com/"}, "publisher": {"@type": "Organization", "name": "SmartVPro", "url": "https://smartvpro.com/"}, "about": {"@type": "SoftwareApplication", "name": "iptv-toolkit", "url": "https://smartvpro-tv.github.io/iptv-toolkit/"}}</script>
+</head>
+<body>
+<header class="site"><div class="inner">
+<a class="brand" href="index.html">iptv<span>-</span>toolkit</a>
+<nav class="top"><a href="index.html">Home</a><a href="guides/getting-started.html">Get started</a><a href="guides/buffering.html">Buffering</a><a href="guides/m3u-format.html">M3U format</a><a href="https://github.com/smartvpro-tv/iptv-toolkit">GitHub</a></nav>
+</div></header>
+<main>
+<div class="crumbs"><a href="index.html">iptv-toolkit</a> / Canada</div>
+<h1>Testing IPTV in Canada</h1>
+<p class="lede">From Toronto fibre to rural DSL: check the playlist, test at peak time, and split English and French lists.</p>
+
+<p>If you are choosing an <a href="https://iptvv-ca.ca/">IPTVV</a> plan or any other IPTV service in Canada, or fixing buffering on the one you have, these free checks tell you whether the service, your line or your Wi-Fi is the weak point.</p>
+<h2>Before you subscribe</h2>
+<ol class="steps">
+<li><strong>Start with a trial</strong>, like this <a href="https://iptvv-ca.ca/iptv-free-trial-canada/">free IPTV trial in Canada</a>.</li>
+<li><strong>Check the playlist:</strong>
+<pre><code><span class="prompt">$ </span>iptv-toolkit info trial.m3u
+<span class="prompt">$ </span>iptv-toolkit check trial.m3u -n 50</code></pre>
+</li>
+<li><strong>Test during hockey night.</strong> Run <code>iptv-toolkit speed</code> on a sports channel during a Saturday game or the playoffs.</li>
+<li><strong>Compare plans</strong>: price, number of connections, and whether French channels are included if you need them (see <a href="https://iptvv-ca.ca/iptv-subscription-canada/">IPTV subscription Canada</a> and <a href="https://iptvv-ca.ca/iptv-cost-canada/">IPTV cost in Canada</a>).</li>
+<li><strong>Check the legal side</strong>: <a href="https://iptvv-ca.ca/is-iptv-legal-in-canada/">is IPTV legal in Canada?</a></li>
+</ol>
+<h2>Canadian connections</h2>
+<table>
+<tr><th>Connection</th><th>What to check</th></tr>
+<tr><td>Fibre (cities)</td><td>Usually plenty of speed. If it buffers, test Wi-Fi first.</td></tr>
+<tr><td>Cable</td><td>Good speed, but test at evening peak: neighbourhood nodes get busy.</td></tr>
+<tr><td>DSL / rural</td><td>Run <code>speed -s 30</code> at peak time. Below 15 Mbps, choose HD over 4K.</td></tr>
+<tr><td>Fixed wireless / satellite</td><td>Latency and data caps matter. Test several times and check your monthly cap.</td></tr>
+</table>
+<p>Already buffering? Follow the <a href="guides/buffering.html">buffering method</a>, then the <a href="https://iptvv-ca.ca/iptv-buffering-canada/">Canadian buffering guide</a>. For device set-up see <a href="https://iptvv-ca.ca/iptv-setup-canada/">IPTV setup in Canada</a>.</p>
+<h2>Bilingual households</h2>
+<p>Split one big playlist into English and French lists so each TV loads only what it needs:</p>
+<pre><code><span class="prompt">$ </span>iptv-toolkit filter all.m3u -n "\bFR\b|French|Québec" -o french.m3u
+<span class="prompt">$ </span>iptv-toolkit filter all.m3u -n "\bFR\b|French|Québec" --exclude -o english.m3u</code></pre>
+<p>Adjust the pattern to the way your provider names French channels; <code>iptv-toolkit groups all.m3u</code> shows the group names.</p>
+
+<h2>Questions from Canadian viewers</h2>
+<h3>What internet speed do I need for IPTV in Canada?</h3><p>Around 15 Mbps per screen for Full HD and 40 Mbps per screen for 4K, measured to the stream. Rural and fixed-wireless connections should be tested at peak hours before you commit.</p>
+<h3>Why is IPTV slower during hockey nights?</h3><p>Saturday night hockey and playoff games are peak hours for servers and ISPs across the country. Run iptv-toolkit speed during a game to see your real margin.</p>
+<h3>Is IPTV legal in Canada?</h3><p>IPTV is a legal way to deliver TV over the internet. What matters is whether the provider is allowed to distribute the channels it sells, so check the company and its terms.</p>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What internet speed do I need for IPTV in Canada?", "acceptedAnswer": {"@type": "Answer", "text": "Around 15 Mbps per screen for Full HD and 40 Mbps per screen for 4K, measured to the stream. Rural and fixed-wireless connections should be tested at peak hours before you commit."}}, {"@type": "Question", "name": "Why is IPTV slower during hockey nights?", "acceptedAnswer": {"@type": "Answer", "text": "Saturday night hockey and playoff games are peak hours for servers and ISPs across the country. Run iptv-toolkit speed during a game to see your real margin."}}, {"@type": "Question", "name": "Is IPTV legal in Canada?", "acceptedAnswer": {"@type": "Answer", "text": "IPTV is a legal way to deliver TV over the internet. What matters is whether the provider is allowed to distribute the channels it sells, so check the company and its terms."}}]}</script>
+</main>
+<footer class="site"><div class="inner">
+<div class="cols">
+<div><h4>Tool</h4><ul>
+<li><a href="https://github.com/smartvpro-tv/iptv-toolkit">Source code</a></li>
+<li><a href="guides/getting-started.html">Getting started</a></li>
+<li><a href="https://github.com/smartvpro-tv/iptv-toolkit/issues">Report a bug</a></li>
+</ul></div>
+<div><h4>Guides</h4><ul>
+<li><a href="guides/buffering.html">Fix buffering</a></li>
+<li><a href="guides/m3u-format.html">M3U format</a></li>
+</ul></div>
+<div><h4>By country</h4><ul>
+<li><a href="usa.html">USA</a></li>
+<li><a href="uk.html">United Kingdom</a></li>
+<li><a href="canada.html">Canada</a></li>
+<li><a href="nederland.html">Nederland</a></li>
+</ul></div>
+<div><h4>SmartVPro</h4><ul>
+<li><a href="https://smartvpro.com/">IPTV USA</a></li>
+<li><a href="https://smartvpro.co.uk/iptv-uk/">IPTV UK</a></li>
+<li><a href="https://iptvv-ca.ca/">IPTVV Canada</a></li>
+<li><a href="https://dutchiptvnl.net/">Dutch IPTV</a></li>
+</ul></div>
+</div>
+<p>iptv-toolkit is free, open-source software (MIT). It does not include, find or share channels or playlists.</p>
+</div></footer>
+</body>
+</html>

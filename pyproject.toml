@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "iptv-toolkit"
+version = "1.0.0"
+description = "Inspect, check, clean and merge M3U/M3U8 IPTV playlists and test stream speed. Zero dependencies."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+authors = [{ name = "SmartVPro" }]
+keywords = ["iptv", "m3u", "m3u8", "playlist", "hls", "stream-checker", "epg", "cli"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Environment :: Console",
+  "Topic :: Multimedia :: Video",
+  "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://smartvpro-tv.github.io/iptv-toolkit/"
+Source = "https://github.com/smartvpro-tv/iptv-toolkit"
+Issues = "https://github.com/smartvpro-tv/iptv-toolkit/issues"
+
+[project.scripts]
+iptv-toolkit = "iptv_toolkit.cli:main"
+
+[tool.setuptools]
+packages = ["iptv_toolkit"]
